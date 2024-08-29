@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #E6E6FA; /* Lavender background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main-page {
+            text-align: center;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .heading {
+            font-size: 36px;
+            color: #4B3F6D;
+            margin-bottom: 10px;
+            text-transform: uppercase; /* Caps the heading */
+            font-family: 'Arial', sans-serif;
+        }
+
+        .description {
+            font-size: 18px;
+            color: #4B3F6D;
+            margin-bottom: 20px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .control-btn {
+            background-color: #4B3F6D; /* Darker lavender */
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            animation: pulse 1.5s infinite; /* Added pulse animation */
+        }
+
+        .control-btn:hover {
+            background-color: #3D2A50; /* Even darker lavender */
+            transform: scale(1.05); /* Slightly enlarges the button */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        }
+
+        .speed-container {
+            margin: 20px;
+        }
+
+        .speed-label {
+            font-size: 18px;
+            color: #4B3F6D;
+        }
+
+        .speed-value {
+            font-size: 18px;
+            color: #4B3F6D;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .back-btn {
+            background-color: #4B3F6D;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #3D2A50;
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-page">
+        <h1 class="heading">Bubble Sort Visualizer</h1>
+        <p class="description">
+       
+<p>Bubble Sort is a simple comparison-based sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The process is repeated until the list is sorted. Each pass through the list moves the next largest element to its correct position, "bubbling" it up to the end of the list.</p>
+
+        </p>
+        <div class="button-container">
+            <button id="startButton" class="control-btn">Start</button>
+            <button id="pauseButton" class="control-btn">Pause</button>
+            <button id="resetButton" class="control-btn">Reset</button>
+        </div>
+        <div class="speed-container">
+            <label class="speed-label" for="speedControl">Speed</label>
+            <input type="range" id="speedControl" min="1" max="100" step="1" value="50">
+            <span id="speedValue" class="speed-value">50</span>
+        </div>
+        <canvas id="visualizerCanvas"></canvas>
+        <button class="back-btn" onclick="window.location.href='dropdown.html'">Back to Selection</button>
+    </div>
+    <script src="bubble-sort.js"></script>
+</body>
+</html>

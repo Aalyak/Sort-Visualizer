@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heap Sort Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #E6E6FA;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .main-page {
+            text-align: center;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .heading {
+            font-size: 36px;
+            color: #4B3F6D;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .description {
+            font-size: 18px;
+            color: #4B3F6D;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .control-btn {
+            background-color: #4B3F6D;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .speed-container {
+            margin: 20px;
+        }
+
+        .speed-label {
+            font-size: 18px;
+            color: #4B3F6D;
+        }
+
+        .speed-value {
+            font-size: 18px;
+            color: #4B3F6D;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .back-btn {
+            background-color: #4B3F6D;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        canvas {
+            background-color: white;
+            border: 2px solid #4B3F6D;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-page">
+        <h1 class="heading">Heap Sort Visualizer</h1>
+        <p class="description">
+Heap Sort is a comparison-based sorting algorithm that uses a binary heap data structure to sort elements. It works by first constructing a max-heap from the input data, where the largest element is at the root of the heap. The algorithm then repeatedly extracts the maximum element from the heap, places it at the end of the sorted portion of the array, and re-adjusts the heap until all elements are sorted.        </p>
+        <div class="button-container">
+            <button id="startButton" class="control-btn">Start</button>
+            <button id="pauseButton" class="control-btn">Pause</button>
+            <button id="resetButton" class="control-btn">Reset</button>
+        </div>
+        <div class="speed-container">
+            <label class="speed-label" for="speedControl">Speed</label>
+            <input type="range" id="speedControl" min="1" max="100" step="1" value="50">
+            <span id="speedValue" class="speed-value">50</span>
+        </div>
+        <canvas id="visualizerCanvas" width="800" height="500"></canvas>
+        <button class="back-btn" onclick="window.location.href='dropdown.html'">Back to Selection</button>
+    </div>
+    <script src="heap-sort.js"></script>
+</body>
+</html>

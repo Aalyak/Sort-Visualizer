@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #E6E6FA; /* Lavender background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .main-page {
+            text-align: center;
+            max-width: 1000px; /* Limit the width for better readability */
+            width: 90%;
+            margin: auto;
+            padding: 20px; /* Add padding for spacing */
+        }
+
+        .heading {
+            font-size: 36px;
+            color: #4B3F6D;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .description {
+            font-size: 18px;
+            color: #4B3F6D;
+            margin-bottom: 20px;
+        }
+
+        .control-btn {
+            background-color: #4B3F6D; /* Darker lavender */
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .control-btn:hover {
+            background-color: #3D2A50; /* Even darker lavender */
+            transform: scale(1.05); /* Slightly enlarges the button */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        }
+
+        .speed-container {
+            margin: 20px;
+        }
+
+        .speed-label {
+            font-size: 18px;
+            color: #4B3F6D;
+        }
+
+        .speed-value {
+            font-size: 18px;
+            color: #4B3F6D;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        canvas {
+            border: 2px solid #4B3F6D; /* Add border for better visibility */
+            margin-top: 20px; /* Add margin to separate from buttons */
+            width: 100%; /* Ensure canvas width is responsive */
+            height: 500px; /* Fixed height for visualization */
+        }
+
+        .back-btn {
+            background-color: #4B3F6D; /* Darker lavender */
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #3D2A50; /* Even darker lavender */
+            transform: scale(1.05); /* Slightly enlarges the button */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="main-page">
+        <h1 class="heading">Selection Sort Visualizer</h1>
+        <p class="description">
+            Selection Sort is a straightforward comparison-based sorting algorithm that works by repeatedly finding the smallest (or largest) element from the unsorted part of the array and swapping it with the first unsorted element. This process continues, moving the boundary between the sorted and unsorted portions of the array until the entire array is sorted. Selection Sort has a time complexity of O(n²) and is generally less efficient than other algorithms like Quick Sort or Merge Sort for large datasets, but it is easy to understand and implement.
+        </p>
+        <button id="startButton" class="control-btn">Start</button>
+        <button id="pauseButton" class="control-btn">Pause</button>
+        <button id="resetButton" class="control-btn">Reset</button>
+        <div class="speed-container">
+            <label class="speed-label" for="speedControl">Speed</label>
+            <input type="range" id="speedControl" min="1" max="100" step="1" value="50">
+            <span id="speedValue" class="speed-value">50</span>
+        </div>
+        <canvas id="visualizerCanvas"></canvas>
+        <button class="back-btn" onclick="window.location.href='dropdown.html'">Back to Selection</button>
+    </div>
+    <script src="selection-sort.js"></script>
+</body>
+</html>

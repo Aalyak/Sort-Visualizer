@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Sorting Algorithm</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #E6E6FA; /* Lavender background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .big-button {
+            background-color: #4B3F6D; /* Darker lavender */
+            border: none;
+            color: white;
+            width: 200px; /* Fixed width */
+            height: 60px; /* Fixed height */
+            padding: 0; /* Remove padding to maintain size */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            line-height: 60px; /* Center text vertically */
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            animation: pulse 1.5s infinite; /* Added pulse animation */
+        }
+
+        .big-button:hover {
+            background-color: #3D2A50; /* Even darker lavender */
+            transform: scale(1.05); /* Slightly enlarges the button */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="big-button" onclick="window.location.href='bubble-sort.html'">Bubble Sort</button>
+        <button class="big-button" onclick="window.location.href='heap-sort.html'">Heap Sort</button>
+        <button class="big-button" onclick="window.location.href='merge-sort.html'">Merge Sort</button>
+        <button class="big-button" onclick="window.location.href='insertion-sort.html'">Insertion Sort</button>
+        <button class="big-button" onclick="window.location.href='selection-sort.html'">Selection Sort</button>
+        <button class="big-button" onclick="window.location.href='index.html'">Back to Main</button>
+    </div>
+</body>
+</html>

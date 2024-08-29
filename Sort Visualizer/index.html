@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #E6E6FA; /* Lavender background */
+            background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/05/HD-Purple-Wallpaper.jpg'); 
+            background-size: cover; /* Ensure the image covers the entire background */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main-page {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background for contrast */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        }
+
+        .heading {
+            font-size: 3rem;
+            color: #6A5ACD; /* Darker lavender */
+            text-transform: uppercase;
+            margin-top: 20px;
+            font-family: 'Arial Black', sans-serif; /* Font change */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .control-btn {
+            background-color: #6A5ACD; /* Darker lavender */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            animation: pulse 2s infinite; /* Continuous animation */
+        }
+
+        .control-btn:hover {
+            background-color: #4B3F6D; /* Even darker lavender */
+            transform: scale(1.05); /* Slightly enlarges the button */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-page">
+        <h1 class="heading">Welcome to the Sorting Visualizer</h1>
+        <button id="getStartedButton" class="control-btn">Get Started</button>
+    </div>
+    <script>
+        document.getElementById('getStartedButton').addEventListener('click', function() {
+            window.location.href = 'dropdown.html'; // Redirect to dropdown.html
+        });
+    </script>
+</body>
+</html>

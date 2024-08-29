@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Sort Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #E6E6FA; /* Lavender background */
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-page {
+            text-align: center;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .heading {
+            font-size: 36px;
+            color: #4B3F6D;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .description {
+            font-size: 18px;
+            color: #4B3F6D;
+            margin-bottom: 20px;
+        }
+
+        .control-btn {
+            background-color: #4B3F6D; /* Darker lavender */
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            animation: pulse 1.5s infinite;
+        }
+
+        .control-btn:hover {
+            background-color: #3D2A50;
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .speed-container {
+            margin: 20px;
+        }
+
+        .speed-label {
+            font-size: 18px;
+            color: #4B3F6D;
+        }
+
+        .speed-value {
+            font-size: 18px;
+            color: #4B3F6D;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .canvas-container {
+            overflow-y: auto;
+            max-height: 500px;
+        }
+
+        .back-button {
+            background-color: #4B3F6D;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #3D2A50;
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-page">
+        <h1 class="heading">Insertion Sort Visualizer</h1>
+        <p class="description">Insertion Sort is a simple comparison-based sorting algorithm that builds the final sorted array one element at a time. It iterates through the input array and, for each element, inserts it into its correct position relative to the elements before it. This process continues until the entire array is sorted. Insertion Sort is efficient for small datasets and nearly sorted arrays, with a time complexity of O(n²) in the average and worst cases.</p>
+        <div>
+            <button id="startButton" class="control-btn">Start</button>
+            <button id="pauseButton" class="control-btn">Pause</button>
+            <button id="resetButton" class="control-btn">Reset</button>
+        </div>
+        <div class="speed-container">
+            <label class="speed-label" for="speedControl">Speed</label>
+            <input type="range" id="speedControl" min="1" max="100" step="1" value="50">
+            <span id="speedValue" class="speed-value">50</span>
+        </div>
+        <div class="canvas-container">
+            <canvas id="visualizerCanvas"></canvas>
+        </div>
+        <button class="back-button" onclick="window.location.href='dropdown.html'">Back to Selection</button>
+    </div>
+    <script src="insertion-sort.js"></script>
+</body>
+</html>
